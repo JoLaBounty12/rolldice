@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Roll of the Dice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" />
+
+<style>.barChart {
+    background-color: aqua;
+    border: solid; height: 30px;
+
+   
+
+} 
+</style>
+</head>
+
+<body>
+
+<h1>Roll of the Dice</h1>
+    
+    <script>
+   
+    var countDice = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+    // arrary of each position
+
+    for(var i = 1; i <=1000; i++) {
+        var dice1 = Math.floor(Math.random()*6)+1;
+        var dice2 = Math.floor(Math.random()*6)+1;
+        var sum = dice1+dice2;
+        countDice [sum]++;
+    
+    }
+
+    for(var j =2; j <=12; j++) {
+    var newLabel = document.createElement("div");
+    newLabel.className = "label";
+    var labelName = document.createTextNode(j + " : " + countDice[j]);
+    newLabel.appendChild(labelName);
+    document.body.appendChild(newLabel);
+
+    var newDiv = document.createElement("div");
+newDiv.className = "barChart";
+newDiv.style.width = countDice[j] + "px";
+document.body.appendChild(newDiv);
+
+
+    }
+
+
+  // for (var j = 1; j<=1000; j++) {
+   //var roll = getRandomInt(6) + getRandomInt(6)
+  // countDice [roll] +=1
+// }
+
+ //   function getRandomInt (max) {
+ // return Math.floor(Math.random() * Math.floor(max)) + 1;
+
+  //  }
+//console.log(getRandomInt(6) + getRandomInt(6));
+
+
+
+
+
+    
+    
+   
+    
+    </script>
+
+
+
+</body>
+
+</html>
